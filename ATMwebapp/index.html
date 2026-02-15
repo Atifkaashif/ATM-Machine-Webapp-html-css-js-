@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="atm">
+    <h2>ATM Machine</h2>
+    <div id="messages"></div>
+
+    <!-- Login Screen -->
+    <div class="screen" id="login-screen">
+        <input type="text" id="pin" placeholder="Enter PIN" readonly>
+        <div class="keypad" id="pin-keypad"></div>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Menu Screen -->
+    <div class="screen" id="menu-screen" style="display:none;">
+        <p>Welcome, <span id="user-display"></span>!</p>
+        <button onclick="showWithdraw()">Withdraw Money</button>
+        <button onclick="showDeposit()">Deposit Money</button>
+        <button onclick="checkBalance()">Check Balance</button>
+        <button onclick="showHistory()">Transaction History</button>
+        <button onclick="exitATM()">Exit</button>
+    </div>
+
+    <!-- Withdraw Screen -->
+    <div class="screen" id="withdraw-screen" style="display:none;">
+        <input type="text" id="withdraw-amount" placeholder="Enter amount" readonly>
+        <div class="keypad" id="withdraw-keypad"></div>
+        <button onclick="withdrawMoney()">Withdraw</button>
+        <button onclick="backToMenu()">Back</button>
+    </div>
+
+    <!-- Deposit Screen -->
+    <div class="screen" id="deposit-screen" style="display:none;">
+        <input type="text" id="deposit-amount" placeholder="Enter amount" readonly>
+        <div class="keypad" id="deposit-keypad"></div>
+        <button onclick="depositMoney()">Deposit</button>
+        <button onclick="backToMenu()">Back</button>
+    </div>
+
+    <!-- Transaction History -->
+    <div class="screen" id="history-screen" style="display:none;">
+        <h3>Transaction History</h3>
+        <ul id="history-list"></ul>
+        <button onclick="backToMenu()">Back</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
