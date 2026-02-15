@@ -1,0 +1,167 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #b0e0e6; /* powder blue */
+    transition: background 0.5s;
+}
+
+/* ATM container */
+.atm {
+    width: 400px;
+    background: #1c1c1c; /* black */
+    border-radius: 25px;
+    padding: 30px 25px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5), -10px -10px 20px rgba(255,255,255,0.1);
+    color: #e0f7fa; /* light powder blue text */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Title */
+.atm h2 {
+    font-size: 28px;
+    color: #b0e0e6; /* powder blue */
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Flash messages */
+#messages {
+    min-height: 25px;
+    margin-bottom: 15px;
+    color: #ffcccb;
+    font-weight: bold;
+}
+
+/* Screens / cards */
+.screen {
+    background: #2c2c2c; /* darker card background */
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: inset 5px 5px 15px rgba(0,0,0,0.5), inset -5px -5px 15px rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+}
+
+/* Inputs */
+.screen input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid #b0e0e6;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+    color: #e0f7fa;
+    background: #1c1c1c;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5), -5px -5px 10px rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+}
+
+.screen input:focus {
+    box-shadow: inset 3px 3px 8px rgba(0,0,0,0.5), inset -3px -3px 8px rgba(255,255,255,0.1);
+    background: #3a3a3a;
+}
+
+/* Buttons */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1c1c1c;
+    background: #b0e0e6; /* powder blue */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3), -5px -5px 15px rgba(255,255,255,0.1);
+    transition: all 0.3s ease, transform 0.2s;
+    min-width: 120px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3), -2px -2px 10px rgba(255,255,255,0.1);
+    background: #add8e6; /* lighter powder blue */
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: inset 2px 2px 10px rgba(0,0,0,0.3), inset -2px -2px 10px rgba(255,255,255,0.1);
+    background: #add8e6;
+}
+
+/* Exit button special style */
+#menu-screen button:nth-child(5),
+button.exit {
+    background: #ff6b6b;
+    color: #1c1c1c;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3), -5px -5px 15px rgba(255,255,255,0.1);
+}
+
+#menu-screen button:nth-child(5):hover,
+button.exit:hover {
+    background: #ff4d4d;
+}
+
+/* Transaction history */
+#history-list {
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b0e0e6;
+}
+
+#history-list li {
+    padding: 4px 0;
+}
+
+/* Keypad */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin: 10px 0;
+}
+
+.keypad button {
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 18px;
+    border-radius: 50%;
+    background: #b0e0e6;
+    color: #1c1c1c;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3), -5px -5px 10px rgba(255,255,255,0.1);
+}
+
+.keypad button:hover {
+    background: #add8e6;
+    transform: scale(1.1);
+}
+
+.keypad button:active {
+    transform: scale(1);
+    box-shadow: inset 2px 2px 10px rgba(0,0,0,0.3), inset -2px -2px 10px rgba(255,255,255,0.1);
+}
+
+/* Responsive */
+@media (max-width: 450px) {
+    .atm { width: 90%; padding: 20px; }
+    button { min-width: 100px; font-size: 13px; }
+}
